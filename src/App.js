@@ -6,6 +6,7 @@ import NewBeer from './components/NewBeer/NewBeer';
 import Home from './components/Home/Home';
 import Beers from './components/Beers/Beers';
 import axios from 'axios';
+import SingleBeer from './components/SingleBeer/SingleBeer';
 
 export default class App extends Component {
   state = {
@@ -33,6 +34,14 @@ export default class App extends Component {
             path="/beers"
             render={() => <Beers beers={this.state.beers} />}
           />
+          <Route
+            exact
+            path="/beers/:beerId"
+            render={(props) => (
+              <SingleBeer {...props} beers={this.state.beers} />
+            )}
+          />
+
           <Route exact path="/random" component={RandomBeer} />
           <Route exact path="/new-beer" component={NewBeer} />
           <Route exact path="/" component={Home} />
