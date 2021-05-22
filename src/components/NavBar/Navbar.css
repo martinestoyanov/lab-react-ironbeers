@@ -1,0 +1,9 @@
+.navbar {
+    height: 10vh;
+    width: 100vw;
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+  }
