@@ -25,7 +25,7 @@ export default class App extends Component {
   }
 
   render() {
-    console.log(this.state);
+    // console.log(this.state);
     return (
       <div className="App">
         <Switch>
@@ -37,9 +37,7 @@ export default class App extends Component {
           <Route
             exact
             path="/beers/:beerId"
-            render={(props) => (
-              <SingleBeer {...props} beers={this.state.beers} />
-            )}
+            render={(props) => <SingleBeer {...props} />}
           />
 
           <Route exact path="/random" component={RandomBeer} />
