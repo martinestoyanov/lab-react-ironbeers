@@ -24,6 +24,11 @@ export default class App extends Component {
       });
   }
 
+  handleBeersUpdate = (e) => {
+    // console.log(e);
+    this.setState({ beers: e });
+  };
+
   render() {
     // console.log(this.state);
     return (
@@ -32,7 +37,12 @@ export default class App extends Component {
           <Route
             exact
             path="/beers"
-            render={() => <Beers beers={this.state.beers} />}
+            render={() => (
+              <Beers
+                beers={this.state.beers}
+                handleBeersUpdate={this.handleBeersUpdate}
+              />
+            )}
           />
           <Route
             exact
